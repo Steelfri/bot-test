@@ -22,4 +22,4 @@ async def serverinfo(ctx):
 	message = f"**{name}**\nNombre de membres : *{numberOfMember}*\nNombre de channels : *{numberofchannels}*\nSalons textuels : *{numberOfChannel}*\nSalons vocaux : *{numberOfVoice}*"
 	await ctx.send(message)
 
-bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.nHa0Mfy9i437EECuDDDjP4bkQYQ')
+bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.gjtF2alodiH2hPX6A6yv7bQqmJ4')
