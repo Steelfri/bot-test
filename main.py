@@ -19,7 +19,7 @@ async def serverInfo(ctx):
 	numberOfMember = server.member_count
 	name = server.name 
 	numberofchannels = numberOfChannel + numberOfVoice
-	message = f"**{name}**\nNombre de membres : *{numberOfMember}*\nNombre de channels : *{numberofchannels}*\nSalons textuels : *{numberOfChannel}*\n Salons vocaux : *{numberOfVoice}*"
+	message = f"**{name}**\nNombre de membres : *{numberOfMember}*\nNombre de channels : *{numberofchannels}*\nSalons textuels : *{numberOfChannel}*\nSalons vocaux : *{numberOfVoice}*"
 	await ctx.send(message)
 
 bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.nHa0Mfy9i437EECuDDDjP4bkQYQ')
