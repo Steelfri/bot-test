@@ -12,7 +12,7 @@ async def coucou(ctx):
 	await ctx.send("Hellow there")
 
 @bot.command()
-async def serverInfo(ctx):
+async def serverinfo(ctx):
 	server = ctx.guild
 	numberOfChannel = len(server.text_channels)
 	numberOfVoice = len(server.voice_channels)
