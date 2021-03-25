@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix = "*", description = "bot de test")
-client.remove_command('help')
+bot.remove_command('help')
 
 @bot.event
 async def on_ready():
