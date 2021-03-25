@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix = "*r", description = "bot de test")
+bot = commands.Bot(command_prefix = "*", description = "bot de test")
 
 @bot.event
 async def on_ready():
