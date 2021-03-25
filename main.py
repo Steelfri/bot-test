@@ -8,7 +8,7 @@ async def on_ready():
 	print("Start")
 
 @bot.command()
-async def help(ctx):
+async def commands(ctx):
 	embed=discord.Embed(title="Liste des commandes", url="https://steelfri.fr", description="Voici la liste des commandes du bot", color=0x4cf6eb)
 	embed.set_footer(text="Esclavre de Steelfri - Communauté Steelfri / Team 031", icon_url = "https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
 	await ctx.send(embed = embed)
