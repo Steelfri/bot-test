@@ -1,25 +1,16 @@
 import discord
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix = "!", description = "bot de test")
+bot = commands.Bot(command_prefix = "*r", description = "bot de test")
 
 @bot.event
 async def on_ready():
 	print("Start")
 
 @bot.command()
-async def coucou(ctx):
-	await ctx.send("Hellow there")
-
-@bot.command()
-async def serverinfo(ctx):
-	server = ctx.guild
-	numberOfChannel = len(server.text_channels)
-	numberOfVoice = len(server.voice_channels)
-	numberOfMember = server.member_count
-	name = server.name 
-	numberofchannels = numberOfChannel + numberOfVoice
-	message = f"**{name}**\nNombre de membres : *{numberOfMember}*\nNombre de channels : *{numberofchannels}*\nSalons textuels : *{numberOfChannel}*\nSalons vocaux : *{numberOfVoice}*"
-	await ctx.send(message)
+async def help(ctx):
+	embed=discord.Embed(title="Liste des commandes", url="https://steelfri.fr", description="Voici la liste des commandes du bot", color=0x4cf6eb)
+	embed.set_footer(text="Esclavre de Steelfri - Communauté Steelfri / Team 031", icon_url = "https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
+	await ctx.send(embed = embed)
 
 bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.gjtF2alodiH2hPX6A6yv7bQqmJ4')
