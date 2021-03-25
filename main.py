@@ -9,7 +9,7 @@ async def on_ready():
 
 @bot.command()
 async def commands(ctx):
-	embed=discord.Embed(title="Liste des commandes", url="https://steelfri.fr", description="Voici la liste des commandes du bot", color=0x4cf6eb)
+	embed=discord.Embed(title="Liste des commandes", url="https://steelfri.fr", description="Voici la liste des commandes du bot\n\n**Modération** :\n*tmute\n*tban\n*ban", color=0x4cf6eb)
 	embed.set_footer(text="Esclavre de Steelfri - Communauté Steelfri / Team 031", icon_url = "https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
 	await ctx.send(embed = embed)
 
