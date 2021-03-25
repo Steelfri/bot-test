@@ -11,9 +11,11 @@ async def on_ready():
 async def commands(ctx):
 	embed=discord.Embed(title="Liste des commandes", url="https://steelfri.fr", description="Voici la liste des commandes du bot :\n", color=0x4cf6eb)
 	embed.set_footer(text="Esclavre de Steelfri - Communauté Steelfri / Team 031", icon_url = "https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
-	embed.add_field(name="Modération", value="`*help moderation`\n\n[Twitch](https://twitch.tv/steelfri)", inline=True)
+	embed.add_field(name="Modération", value="`*help moderation`", inline=True)
 	embed.add_field(name="Fun", value="`*help fun`", inline=True)
-	embed.add_field(name="Autres", value="`*help others`\n\n[Twitter](https://twitter.com/031_steelfri)", inline=True)
+	embed.add_field(name="Autres", value="`*help others`", inline=True)
+	embed.add_field(name="", values="[Twitch](https://twitch.tv/steelfri)", inline=True)
+	embed.add_field(name="", values="[Twitter](twitter.com/031_steelfri/)", inline=True)
 
 	await ctx.send(embed = embed)
 
