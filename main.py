@@ -14,8 +14,8 @@ async def commands(ctx):
 	embed.add_field(name="Modération", value="`*help moderation`", inline=True)
 	embed.add_field(name="Fun", value="`*help fun`", inline=True)
 	embed.add_field(name="Autres", value="`*help others`", inline=True)
-	embed.add_field(name="", values="[Twitch](https://twitch.tv/steelfri)", inline=True)
-	embed.add_field(name="", values="[Twitter](twitter.com/031_steelfri/)", inline=True)
+	embed.add_field(name="a", values="[Twitch](https://twitch.tv/steelfri)", inline=True)
+	embed.add_field(name="a", values="[Twitter](twitter.com/031_steelfri/)", inline=True)
 
 	await ctx.send(embed = embed)
 
