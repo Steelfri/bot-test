@@ -19,4 +19,7 @@ async def help(ctx):
 
 	await ctx.send(embed = embed)
 
+async def help(ctx, test):
+	await ctx.send("test")
+
 bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.B7JuSssBplV59Yl4sBDddHARN3M')
