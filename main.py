@@ -12,7 +12,7 @@ async def help(ctx, arg=None):
 	if arg == "moderator":
 		embed=discord.Embed(title="Liste des commandes", url="https://steelfri.fr", description="Voici la liste des commandes du bot :\n", color=0x4cf6eb)
 		embed.set_footer(text="Esclave de Steelfri - Communauté Steelfri / Team 031", icon_url = "https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
-		embed.add_field(name="Modération", value="`*tmute`\n`*tban`\n`*ban`\n`*kill`", inline=False)
+		embed.add_field(name="Modération :", value="`*tmute`, `*tban`, `*ban`, `*kill`", inline=False)
 		
 		await ctx.send(embed = embed)
 
