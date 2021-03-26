@@ -1,4 +1,5 @@
 import discord
+import asyncio
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix = "*", description = "bot de test", help_command=None)
