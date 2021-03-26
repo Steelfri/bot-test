@@ -77,4 +77,4 @@ try:
 
 				return
 	
-bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.gch47GAXlnIhoGju2JvymnEd0Ps')
+bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.enVAjkiLxMd5tKxAvER3wDtKz_k')
