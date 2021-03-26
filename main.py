@@ -47,7 +47,7 @@ async def help(ctx, arg=None):
 async def tmute(ctx, member: discord.Member, time: int, aac, *, reason=None):
 	guild = ctx.guild
 
-	if d not in ["s", "m", "h", "d"]:
+	if aac not in ["s", "m", "h", "d"]:
 	  eembed=discord.Embed(title="Erreur", url="https://steelfri.fr", description=f"Une erreur est survenue:\n", color=0x4cf6eb)
 	  eembed.set_footer(text="Esclave de Steelfri - Communauté Steelfri / Team 031", icon_url = "https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
 	  eembed.add_field(name="Erreur :", value=f"Un champ est mal entré", inline=True)
