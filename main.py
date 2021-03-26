@@ -44,7 +44,7 @@ async def help(ctx, arg=None):
 
 @bot.command()
 @commands.has_any_role(824784559735963688)
-async def tmute(ctx, member: discord.Member, time: int, d, *, reason=None):
+async def tmute(ctx, member: discord.Member, time: int, aac, *, reason=None):
 	guild = ctx.guild
 
 	for role in guild.roles:
