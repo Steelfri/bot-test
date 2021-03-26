@@ -44,13 +44,10 @@ async def help(ctx, arg=None):
 @bot.command()
 @commands.has_any_role(824784559735963688)
 async def tmute(ctx, member: discord.Member, time: int, d, *, reason=None):
-	await ctx.send("test") 
 	guild = ctx.guild
 
 	for role in guild.roles:
-		await ctx.send("test22") 
 		if role.name == "Muted":
-			await ctx.send("test33") 
 			await member.add_roles(role)
 
 			tembed=discord.Embed(title="Mute Temporaire", url="https://steelfri.fr", description=f"{member} a été mute :\n", color=0x4cf6eb)
