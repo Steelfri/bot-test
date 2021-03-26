@@ -57,22 +57,22 @@ async def tmute(ctx, member: discord.Member, time: int, d, *, reason=None):
 			tembed.add_field(name="Raison :", value=f"`{reason}`", inline=True)
 			await ctx.send(embed=tembed)
 
-			if d == "s":
+			if aac == "s":
 				await asyncio.sleep(time)
 
-			elif d == "m":
+			elif aac == "m":
 				await asyncio.sleep(time*60)
 
-			elif d == "h":
+			elif aac == "h":
 				await asyncio.sleep(time*60*60)
 
-			elif d == "d":
+			elif aac == "d":
 				await asyncio.sleep(time*60*60*24)
 
 			else:
 				eembed=discord.Embed(title="Erreur", url="https://steelfri.fr", description=f"{member}, une erreur est survenue:\n", color=0x4cf6eb)
 				eembed.set_footer(text="Esclave de Steelfri - Communauté Steelfri / Team 031", icon_url = "https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
-				eembed.add_field(name="Erreur :", value=f"Un champ est mal entré`", inline=True)
+				eembed.add_field(name="Erreur :", value=f"Un champ est mal entré", inline=True)
 				await ctx.send(embed=eembed)
 
 			await member.remove_roles(role)
