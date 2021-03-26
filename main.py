@@ -195,7 +195,7 @@ async def tban(ctx, member: discord.Member, time: int, aac, *, reason=None):
             await member.remove_roles(role)
             banned_list.remove(member.id)
 
-            uembed = discord.Embed(title="Unmute", url="https://steelfri.fr", description=f"{member} a été mute :\n",
+            uembed = discord.Embed(title="Unban", url="https://steelfri.fr", description=f"{member} a été unban :\n",
                                    color=0x4cf6eb)
             uembed.set_footer(text="Esclave de Steelfri - Communauté Steelfri / Team 031",
                               icon_url="https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
