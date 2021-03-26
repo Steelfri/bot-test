@@ -44,15 +44,6 @@ async def help(ctx, arg=None):
 #https://stackoverflow.com/questions/61321062/discord-py-tempmute-command edit par moi je savais pas faire le truc du temps rip
 @client.command()
 @commands.has_any_role(824784559735963688)
-
-time_convert = {"s": 1, "m": 60, "h": 3600, "d": 86400}
-
-def convert_time_to_seconds(time):
-    try:
-        return int(time[:-1]) * time_convert[time[-1]]
-    except:
-        return time
-
 async def tmute(ctx, member : discord.Member, time=0,*, reason=None):
     if not member or time == 0 or time == str:
         await ctx.channel.send(embed=commanderror)
@@ -69,7 +60,6 @@ async def tmute(ctx, member : discord.Member, time=0,*, reason=None):
 		tembed.add_field(name="Membre Mute :", value=f"`{member}`", inline=True)
 		tembed.add_field(name="Raison :", value=f"`{reason}`", inline=True)
 
-
     await ctx.channel.send(embed=tembed)
 
     tembed=discord.Embed(title=f"Logs TMute - {member.mention}", url="https://steelfri.fr", description=f"Information sur le mute :\n", color=0x4cf6eb)
@@ -81,5 +71,5 @@ async def tmute(ctx, member : discord.Member, time=0,*, reason=None):
 
     modlog = client.get_channel(824791678522097685)
     await modlog.send(embed=tempMuteModLogEmbed)
-    
+
 bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.gch47GAXlnIhoGju2JvymnEd0Ps')
