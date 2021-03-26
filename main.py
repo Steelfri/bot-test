@@ -4,12 +4,12 @@ from discord.ext import commands
 
 bot = commands.Bot(command_prefix="*", description="bot de test", help_command=None)
 
-async def no_error(func):
+def no_error(func):
     try:
-        await func()
+        func()
     except:
         pass
-
+        
 @bot.event
 async def on_ready():
     print("Start")
