@@ -41,8 +41,18 @@ async def help(ctx, arg=None):
 
 		await ctx.send(embed = embed)
 
+#https://stackoverflow.com/questions/61321062/discord-py-tempmute-command edit par moi je savais pas faire le truc du temps rip
 @client.command()
 @commands.has_any_role(824784559735963688)
+
+time_convert = {"s": 1, "m": 60, "h": 3600, "d": 86400}
+
+def convert_time_to_seconds(time):
+    try:
+        return int(time[:-1]) * time_convert[time[-1]]
+    except:
+        return time
+
 async def tmute(ctx, member : discord.Member, time=0,*, reason=None):
     if not member or time == 0 or time == str:
         await ctx.channel.send(embed=commanderror)
@@ -50,41 +60,26 @@ async def tmute(ctx, member : discord.Member, time=0,*, reason=None):
     elif reason == None:
         reason = "Aucunes raisons fournies"
 
-    muteRole = discord.utils.get(ctx.guild.roles, id=663076470180151339)
+    muteRole = discord.utils.get(ctx.guild.roles, id=824784923726053376)
+
     await member.add_roles(muteRole)
 
-    tempMuteEmbed = discord.Embed(colour=embedcolour, description=f"**Reason:** {reason}")
-    tempMuteEmbed.set_author(name=f"{member} Has Been Muted", icon_url=f"{member.avatar_url}")
-    tempMuteEmbed.set_footer(text=embedfooter)
+    tembed=discord.Embed(title="Mute Temporaire", url="https://steelfri.fr", description=f"{member} a été mute :\n", color=0x4cf6eb)
+		tembed.set_footer(text="Esclave de Steelfri - Communauté Steelfri / Team 031", icon_url = "https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
+		tembed.add_field(name="Membre Mute :", value=f"`{member}`", inline=True)
+		tembed.add_field(name="Raison :", value=f"`{reason}`", inline=True)
 
-    await ctx.channel.send(embed=tempMuteEmbed)
 
-    tempMuteModLogEmbed = discord.Embed(color=embedcolour)
-    tempMuteModLogEmbed.set_author(name=f"[MUTE] {member}", icon_url=f"{member.avatar_url}")
-    tempMuteModLogEmbed.add_field(name="User", value=f"{member.mention}")
-    tempMuteModLogEmbed.add_field(name="Moderator", value=f"{ctx.message.author}")
-    tempMuteModLogEmbed.add_field(name="Reason", value=f"{reason}")
-    tempMuteModLogEmbed.add_field(name="Duration", value=f"{str(time)}")
-    tempMuteModLogEmbed.set_footer(text=embedfooter)
-    modlog = client.get_channel(638783464438759464)
+    await ctx.channel.send(embed=tembed)
+
+    tembed=discord.Embed(title=f"Logs TMute - {member.mention}", url="https://steelfri.fr", description=f"Information sur le mute :\n", color=0x4cf6eb)
+		tembed.set_footer(text="Esclave de Steelfri - Communauté Steelfri / Team 031", icon_url = "https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
+		tembed.add_field(name="Membre Mute :", value=f"`{member}`", inline=True)
+		tembed.add_field(name="Raison :", value=f"`{reason}`", inline=True)
+		tembed.add_field(name="Modérateur :", value=f"`{ctx.message.author}")
+		tembed.add_field(name="Durée :", value=f"`{str(time)}`")
+
+    modlog = client.get_channel(824791678522097685)
     await modlog.send(embed=tempMuteModLogEmbed)
-
-    tempMuteDM = discord.Embed(color=embedcolour, title="Mute Notification", description="You Were Muted In **The Official Vanmanyo Discord Server**")
-    tempMuteDM.set_footer(text=embedfooter)
-    tempMuteDM.add_field(name="Reason", value=f"{reason}")
-    tempMuteDM.add_field(name="Duration", value=f"{time}")
-
-    userToDM = client.get_user(member.id)
-    await userToDM.send(embed=tempMuteDM)
-
-    await asyncio.sleep(time)
-    await member.remove_roles(muteRole)
-
-    unMuteModLogEmbed = discord.Embed(color=embedcolour)
-    unMuteModLogEmbed.set_author(name=f"[UNMUTE] {member}", icon_url=f"{member.avatar_url}")
-    unMuteModLogEmbed.add_field(name="User", value=f"{member.mention}")
-    unMuteModLogEmbed.set_footer(text=embedfooter)
-    modlog = client.get_channel(638783464438759464)
-    await modlog.send(embed=unMuteModLogEmbed)
-
+    
 bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.gch47GAXlnIhoGju2JvymnEd0Ps')
