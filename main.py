@@ -50,7 +50,7 @@ async def tmute(ctx, member: discord.Member, time: int, d, *, reason=None):
 		if role.name == "Muted":
 			await member.add_roles(role)
 
-			tembed=discord.Embed(title="Mute Temporaire", url="https://steelfri.fr", description=f"{member} a été mute :\n", color=0x4cf6eb)
+			tembed=discord.Embed(title="Mute Temporaire", url="https://steelfri.fr", color=0x4cf6eb)
 			tembed.set_footer(text="Esclave de Steelfri - Communauté Steelfri / Team 031", icon_url = "https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
 			tembed.add_field(name="Membre Mute :", value=f"`{member}`", inline=True)
 			tembed.add_field(name="Raison :", value=f"`{reason}`", inline=True)
@@ -70,11 +70,11 @@ async def tmute(ctx, member: discord.Member, time: int, d, *, reason=None):
 
 				await member.remove_roles(role)
 
-			uuembed=discord.Embed(title="Unmute", url="https://steelfri.fr", color=0x4cf6eb)
+			uuembed=discord.Embed(title="Unmute", url="https://steelfri.fr", description=f"{member} a été mute :\n", color=0x4cf6eb)
 			uembed.set_footer(text="Esclave de Steelfri - Communauté Steelfri / Team 031", icon_url = "https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
-			uembed.add_field(name="Membre Unmute :", value=f"`{member}`", inline=True)
+			uembed.add_field(name="Membre Unmute :", value=f"`{member.mention}`", inline=True)
 			await ctx.send(embed=uembed)
 
 			return
-
-bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.gch47GAXlnIhoGju2JvymnEd0Ps')
+	
+bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.enVAjkiLxMd5tKxAvER3wDtKz_k')
