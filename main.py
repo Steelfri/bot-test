@@ -213,6 +213,7 @@ async def ban(ctx, user : discord.User, *reason):
     bembed.set_footer(text="Esclave de Steelfri - Communauté Steelfri / Team 031",
                            icon_url="https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
     bembed.add_field(name="Membre Ban Perm :", value=f"`{user.name}`", inline=True)
+    bembed.add_field(name="Raison :", value=f"`{reason}`", inline=True)
     await ctx.send(embed=bembed)
 
 bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.QDP4GZUe80DOWovMVqxcIpPmvN0')
