@@ -208,10 +208,8 @@ async def tban(ctx, member: discord.Member, time: int, aac, *, reason=None):
 async def ban(ctx, user : discord.User, *reason):
 	reason = " ".join(reason)
 	await ctx.guild.ban(user, reason = reason)
-	bembed = discord.Embed(title="Ban", url="https://steelfri.fr", description=f"{member} a été ban perm :\n",
-                           color=0x4cf6eb)
-    bembed.set_footer(text="Esclave de Steelfri - Communauté Steelfri / Team 031",
-                    icon_url="https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
+	bembed = discord.Embed(title="Ban", url="https://steelfri.fr", description=f"{member} a été ban perm :\n", color=0x4cf6eb)
+    bembed.set_footer(text="Esclave de Steelfri - Communauté Steelfri / Team 031", icon_url="https://media.discordapp.net/attachments/736631083185078302/824098862783397928/image0.png?width=559&height=559")
     bembed.add_field(name="Membre Ban Perm :", value=f"`{member}`", inline=True)
     await ctx.send(embed=bembed)
 
