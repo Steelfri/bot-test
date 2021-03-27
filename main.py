@@ -215,4 +215,4 @@ async def ban(ctx, user : discord.User, *reason):
     bembed.add_field(name="Membre Ban Perm :", value=f"`{user.name}`", inline=True)
     await ctx.send(embed=bembed)
 
-bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.VZZ3YxYFTFcAlJJjCnDuYNE8DJw')
+bot.run('ODIzNTE2OTU5OTA2ODU2OTkx.YFh97w.QDP4GZUe80DOWovMVqxcIpPmvN0')
